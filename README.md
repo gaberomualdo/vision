@@ -1,7 +1,7 @@
 # Vision
 Shed a different light to a picture.
 
-![]
+![Vision Example Picture]()
 
 ## Description
 Vision is a simple algorithm that generates and outputs a new, different style of image based on the given input image.
@@ -31,3 +31,26 @@ $ java Vision path/to/input_image.png path/to/output_image.png
 Note that the input and output images can be of any mainstream image filetype (png, jpeg, etc.), and that before running either the Java or Python versions, Java/Python3 must be installed on your machine.
 
 ## Algorithm
+The algorithm is quite simple, and is based on randomness.
+
+It starts by choosing a random open pixel, with an RGB color. Call the sum of the R, G, and B values of this random pixel ```n```.
+
+Then, it loops through every pixel in the image, and sums the R, G, and B values of the current pixel. Call this sum ```m```. It then compares ```m``` to ```n```, checking if the difference between sum of the current pixel (```m```) and the random pixel (```n```) is less than 75. 75 can be changed to a different amount in the program for differing results. If the difference is indeed less than 75, then the color of the current pixel is subsequently changed to the value of the randomly chosen pixel at the beginning.
+
+The program then repeats these steps until all pixels in the image have been filled.
+
+### TL;DR
+
+In short, the program chooses several random colors in the image, and goes through every pixel, and if a pixel is similar enough to one of the random colors, its value is changed to that random color.
+
+### Results
+
+The results of this program are very interested. The randomness of the base colors chosen produces an interesting and unique design, where images can have a different tint of a certain set of base colors, and generated output images for a given input image are all uniquely different.
+
+An example input and output is shown above, and a web implementation of the program can be found and used at [projects.xtrp.io/vision/](https://projects.xtrp.io/vision/). Please check it out, and try out different inputs as needed.
+
+### License and Credits
+
+This program is licensed under the **MIT License**. See LICENSE.md for more info.
+
+This program was built by [Fred Adams](https://xtrp.io/).
