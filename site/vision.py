@@ -44,7 +44,7 @@ except:
 imageWidth, imageHeight = originalImage.size
 
 # target pixel count variable — used to resize image
-targetPixelCount = 300000
+targetPixelCount = 230000
 
 # resize image to have closest to targetPixelCount pixels if image is too big
 if(imageWidth * imageHeight > targetPixelCount):
