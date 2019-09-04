@@ -8,6 +8,7 @@
 :root {
 	--theme-color: #2188ff;
 	--light-color: #cfd8dc;
+	--lighter-color: #eceff1;
 
 	--blue-color: #2188ff;
 	--blue-dark-color: #2155ff;
@@ -41,14 +42,14 @@ body > div.container {
 .action_btn {
 	transition: border-color 0.25s ease-in-out, color 0.25s ease-in-out;
 	display: block;
-	min-height: 2.5rem;
+	min-height: 2.25rem;
 	box-sizing: border-box;
-	border: 2px solid var(--light-color);
-	border-radius: calc(2.5rem / 2);
+	border: 1px solid var(--light-color);
+	border-radius: 4px;
 	cursor: pointer;
 	line-height: 1.75rem;
-	font-size: 1.2rem;
-	padding: calc(0.375rem - 2px) 1rem;
+	font-size: 0.95rem;
+	padding: calc(0.25rem - 1px) 0.65rem;
 	color: var(--light-text-color);
 	float: left;
 	text-decoration: none;
@@ -61,31 +62,32 @@ body > div.container {
 }
 
 /* navbar */
-body > div.container > nav.main_navbar {
-	min-height: 7.5rem;
+body > div.container > div.topbar {
 	box-sizing: border-box;
-	padding: 2.5rem 0;
+	padding: 2.75rem 0;
 	position: relative;
 	width: 100%;
+	overflow: hidden;
+	height: auto;
 }
 
-/* navbar is sticky on tablet and laptop */
-@media only screen and (min-width: 451px) {
-	body > div.container > nav.main_navbar {
-		position: sticky;
-		top: 0;
-	}
-}
-
-/* logo link */
-body > div.container > nav.main_navbar > a.logo {
+/* logo title */
+body > div.container > div.topbar > h1.title {
 	font-weight: bold;
-	font-size: 2rem;
-	float: left;
-	color: var(--theme-color);
-	text-decoration: none;
-	height: 2.5rem;
-	line-height: 2.5rem;
+	font-size: 3.5rem;
+	text-align: center;
+	line-height: 3.5rem;
+	color: var(--dark-text-color);
+	margin: 0;
+	margin-bottom: 0.75rem;
+}
+
+/* logo description */
+body > div.container > div.topbar > p.description {
+	font-size: 1.1rem;
+	color: var(--light-text-color);
+	text-align: center;
+	line-height: 1.375;
 }
 
 /* action button link */
@@ -116,12 +118,7 @@ body > div.container > div.hero > img {
 
 /* show correct hero photo depending on whether device is mobile or not */
 @media only screen and (max-width: 450px) {
-	body > div.container > div.hero > img.hero_photo {
-		display: none;
-	}
-}
-@media only screen and (min-width: 451px) {
-	body > div.container > div.hero > img.hero_photo_mobile {
+	body > div.container > div.hero {
 		display: none;
 	}
 }
@@ -143,6 +140,13 @@ body > div.container > div.app > h1.title {
 	letter-spacing: -0.0375rem;
 }
 
+/* don't display header on mobile */
+@media only screen and (max-width: 450px) {
+	body > div.container > div.app > h1.title {
+		display: none;
+	}
+}
+
 /* results section */
 body > div.container > div.app > div.results {
 	 width: 100%;
@@ -150,27 +154,107 @@ body > div.container > div.app > div.results {
 	 overflow: hidden;
 }
 
+/* results loading container and loader */
+
+/* rotating animation for loader */
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+body > div.container > div.app > div.results > div.loading_container {
+	display: block;
+	width: 100%;
+	height: 3.5rem;
+	padding: 1rem 0;
+	text-align: center;
+}
+body > div.container > div.app > div.results > div.loading_container > div.loader {
+	width: 3.5rem;
+	height: 3.5rem;
+	box-sizing: border-box;
+	border: 0.35rem solid var(--lighter-color);
+	border-left-color: var(--dark-text-color);
+	border-radius: 50%;
+	animation: rotating 1s linear infinite;
+	display: inline-block;
+}
+
+/* results loading */
+body > div.container > div.app > div.results:not(.loading) > div.loading_container {
+	display: none;
+}
+body > div.container > div.app > div.results.loading > *:not(:first-child) {
+	display: none !important;
+}
+
 /* photos (3 per line on tablet and desktop, 1 per line on mobile) */
-body > div.container > div.app > div.results > div.generated_photos {
+body > div.container > div.app > div.results > div.output_photos_container {
 	width: 100%;
 	height: auto;
 	overflow: hidden;
-	margin-bottom: 1rem;
+	font-size: 0;
+	padding-left: 1rem;
+	box-sizing: border-box;
 }
-body > div.container > div.app > div.results > div.generated_photos > img {
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container {
 	display: block;
 	float: left;
 	height: auto;
-	width: calc((100% - 4rem) / 3);
+	overflow: auto;
+	width: calc((100% - 2rem) / 3);
+	position: relative;
+	margin-bottom: 1rem;
 }
-body > div.container > div.app > div.results > div.generated_photos > img:not(:last-child) {
-	margin-right: 2rem;
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container:not(:last-child) {
+	margin-right: 1rem;
 }
+
+/* landscape pictures */
+body > div.container > div.app > div.results > div.output_photos_container.landscape > div.image_container {
+	width: calc((100% - 2rem) / 2);
+}
+
 @media only screen and (max-width: 670px) {
-	body > div.container > div.app > div.results > div.generated_photos > img {
-		width: 100%;
+	body > div.container > div.app > div.results > div.output_photos_container {
+		padding-left: 0 !important;
+	}
+	body > div.container > div.app > div.results > div.output_photos_container > div.image_container {
+		width: 100% !important;
 		margin-right: 0 !important;
 	}
+}
+
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container > img {
+	width: 100%;
+	height: auto;
+}
+
+/* photo download button */
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container > a.download_image {
+	width: 2rem;
+	height: 2rem;
+	box-sizing: border-box;
+	display: block;
+	padding: 0.375rem;
+	opacity: 0.75;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+}
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container > a.download_image:hover {
+	opacity: 1;
+}
+body > div.container > div.app > div.results > div.output_photos_container > div.image_container > a.download_image > svg {
+	width: 100%;
+	height: 100%;
+	fill: #fff;
 }
 
 /* actions */
@@ -178,26 +262,44 @@ body > div.container > div.app > div.results > button.action_btn {
 	display: block;
 	float: left;
 	clear: both;
+	margin-top: 0.75rem;
+	margin-left: 1rem;
 }
-body > div.container > div.app > div.results > button.action_btn:not(:last-child) {
-	margin-bottom: 1rem;
+@media only screen and (max-width: 450px) {
+	body > div.container > div.app > div.results > button.action_btn {
+		margin-left: 0 !important;
+	}
 }
 
 /* footer */
 body > div.container > footer {
 	width: 100%;
-	padding: 1rem 0;
-	line-height: 2rem;
-	font-size: 1.2rem;
+	padding: 0.75rem 0;
 	text-align: center;
 	border-top: 2px solid var(--light-color);
+	overflow: hidden;
+	height: auto;
 }
-body > div.container > footer > a {
+body > div.container > footer > * {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	display: block;
+}
+body > div.container > footer > p.credits {
+	float: left;
+}
+body > div.container > footer > ul.links {
+	float: right;
+}
+body > div.container > footer > ul.links > a {
+	margin-left: 1rem;
+}
+body > div.container > footer a {
 	color: var(--blue-color);
 	text-decoration: none;
-	cursor: pointer;
 }
-body > div.container > footer > a:hover {
+body > div.container > footer a:hover {
 	color: var(--blue-dark-color);
 	text-decoration: underline;
 }
