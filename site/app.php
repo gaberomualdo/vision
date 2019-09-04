@@ -1,5 +1,8 @@
 <?php
 
+// set content type of page to JSON
+header('Content-Type: application/json');
+
 // variable for input image base64, which is sent via a POST request --> decode by replacing ":" with "+" in base64
 $input_image = str_replace(":", "+", $_POST["input_image"]);
 

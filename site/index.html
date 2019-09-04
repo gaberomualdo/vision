@@ -21,6 +21,9 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,400i,600,700,900&display=swap" rel="stylesheet">
 
+	<!-- FilePond (used custom for HTML file input) CSS -->
+	<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+
 	<!-- CSS -->
 	<link rel="stylesheet" href="assets/css/normalize.css">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -40,9 +43,9 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 	<link rel="manifest" href="manifest.json">
-	<meta name="msapplication-TileColor" content="#2188ff">
+	<meta name="msapplication-TileColor" content="#37474f">
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#2188ff">
+	<meta name="theme-color" content="#37474f">
 </head>
 
 <body>
@@ -64,15 +67,20 @@
 			<!-- title -->
 			<h1 class="title">Generate Visions for a Picture</h1>
 			
-			<!-- enter original image form -->
-			<form class="image_input_form">
-				
-			</form>
+			<!-- enter original image input container -->
+			<div class="image_input_container">
+				<input type="file" accepts="image/*">
+			</div>
 
-			<!-- results of processed photo -->
+			<!-- results container -->
 			<div class="results">
-				<!-- container for generated photos -->
-				<div class="generated_photos">
+				<!-- loading symbol container -->
+				<div class="loading_container">
+					<div class="loader"></div>
+				</div>
+
+				<!-- container for outputted photos -->
+				<div class="output_photos_container">
 					
 				</div>
 
@@ -97,6 +105,10 @@
 			</ul>
 		</footer>
 	</div>
+
+	<!-- FilePond (used for HTML file input) scripts -->
+	<script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+	<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
 	<!-- scripts -->
 	<script src="assets/js/script.js"></script>
