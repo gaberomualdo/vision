@@ -30,11 +30,16 @@ FilePond.create(
 
 				// process request when response is received
 				phpAppRequest.onload = () => {
-					// 
 					if(phpAppRequest.status === 200) {
-						console.log(phpAppRequest.response);
+						// get list of outputted image paths and store in var
+						const outputtedImagePaths = JSON.parse(phpAppRequest.response);
+
+						// for each outputted image, display on page
+						outputtedImagePaths.forEach((imagePath) => {
+							document.querySelector("body > div.container > div.app > div.results > div.output_photos_container").innerHTML += `<img src="outputted_images/${imagePath}" alt="Generated Vision">`;
+						});
 					} else {
-						// yield error
+						// yield error as the request failed
 						alert("Server Error.");
 					}
 				}

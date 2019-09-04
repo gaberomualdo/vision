@@ -9,6 +9,9 @@ $input_image = str_replace(":", "+", $_POST["input_image"]);
 // get input image file extension by splitting with ";", then splitting with "/"
 $input_image_type = explode("/", explode(";", $input_image)[0])[1];
 
+// get input image content and store in variable
+$input_image_content = base64_decode(explode(";base64,", $input_image)[1]);;
+
 // generate unique image ID using MD5 function and unique id based on current time
 $input_image_id = md5(uniqid());
 
@@ -16,7 +19,7 @@ $input_image_id = md5(uniqid());
 $input_image_filename = $input_image_id . "." . $input_image_type;
 
 // write image to input image filename
-file_put_contents("inputted_images/" . $input_image_filename, file_get_contents($input_image));
+file_put_contents("inputted_images/" . $input_image_filename, $input_image_content);
 
 // amount of visions to generate
 define("AMOUNT_OF_VISIONS_TO_GENERATE", 3);
@@ -40,7 +43,7 @@ for($visionCount = 0; $visionCount < AMOUNT_OF_VISIONS_TO_GENERATE; $visionCount
 	}
 
 	// add conversion command for current vision to conversion command var
-	$conversion_command .= "python3 inputted_images/" . $input_image_filename . " outputted_images/" . $output_image_filenames[$visionCount];
+	$conversion_command .= "python3 vision.py inputted_images/" . $input_image_filename . " outputted_images/" . $output_image_filenames[$visionCount];
 }
 
 // run conversion command
