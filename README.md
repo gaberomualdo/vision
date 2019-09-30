@@ -1,15 +1,12 @@
 # Vision
 Shed a different light to a picture.
 
-![Vision Example Picture]()
+![Vision Example Picture](site/assets/img/hero_photo.png)
 
 ## Description
 Vision is a simple algorithm that generates and outputs a new, different style of image based on the given input image.
 
 An example output is shown above.
-
-## Website
-The official website and web implementation can be found and used at [projects.xtrp.io/vision/](https://projects.xtrp.io/vision/).
 
 ## Code
 Vision is written in both Python (3) and Java. Both programs should be run from the command line, in the following formats, respectively:
@@ -45,9 +42,9 @@ In short, the program chooses several random colors in the image, and goes throu
 
 ### Results
 
-The results of this program are very interested. The randomness of the base colors chosen produces an interesting and unique design, where images can have a different tint of a certain set of base colors, and generated output images for a given input image are all uniquely different.
+The results of this program are very interesting. The randomness of the base colors chosen produces an interesting and unique design, where images can have a different tint of a certain set of base colors, and generated output images for a given input image are all uniquely different.
 
-An example input and output is shown above, and a web implementation of the program can be found and used at [projects.xtrp.io/vision/](https://projects.xtrp.io/vision/). Please check it out, and try out different inputs as needed.
+An example input and output is shown above, and I encourage you to try out the Python or Java Versions yourself!
 
 ### License and Credits
 
