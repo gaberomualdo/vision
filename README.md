@@ -27,6 +27,10 @@ $ java Vision path/to/input_image.png path/to/output_image.png
 
 Note that the input and output images can be of any mainstream image filetype (png, jpeg, etc.), and that before running either the Java or Python versions, Java/Python3 must be installed on your machine.
 
+## Web Implementation
+
+A web implementation was written with PHP and HTML &amp; CSS, which can be found at ```site/``` in this repo. You can run a PHP server on that directory and use the GUI to generate Visions of a given photo. I would like to put the site up in the near future, however I have been having server problems with Python3 and PHP.
+
 ## Algorithm
 The algorithm is quite simple, and is based on randomness.
 
