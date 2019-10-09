@@ -52,7 +52,7 @@ An example input and output is shown above, and I encourage you to try out the P
 
 ## Contributing
 
-Want to contribute to Vision? Great! Feel free to submit add a pull request with your edits, and be sure to explain what your edits do. I try to look at every pull request, and merge as soon as I can. If you find a bug, feel free to submit an issue as well.
+Want to contribute to Vision? Great! Feel free to [add a pull request](https://github.com/xtrp/Vision/compare) with your edits. I try to look at every pull request, and merge as soon as I can. If you find a bug, feel free to [submit an issue](https://github.com/xtrp/Vision/issues/new) as well.
 
 ## License and Credits
 
