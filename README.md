@@ -50,7 +50,11 @@ The results of this program are very interesting. The randomness of the base col
 
 An example input and output is shown above, and I encourage you to try out the Python or Java Versions yourself!
 
-### License and Credits
+## Contributing
+
+Want to contribute to Vision? Great! Feel free to submit add a pull request with your edits, and be sure to explain what your edits do. I try to look at every pull request, and merge as soon as I can. If you find a bug, feel free to submit an issue as well.
+
+## License and Credits
 
 This program is licensed under the **MIT License**. See LICENSE.md for more info.
 
