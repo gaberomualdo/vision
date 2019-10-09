@@ -57,5 +57,3 @@ Want to contribute to Vision? Great! Feel free to [add a pull request](https://g
 ## License and Credits
 
 This program is licensed under the **MIT License**. See LICENSE.md for more info.
-
-This program was built by [Fred Adams](https://xtrp.io/).
