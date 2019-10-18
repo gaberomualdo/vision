@@ -20,7 +20,8 @@ $ python3 vision.py path/to/input_image.png path/to/output_image.png
 
 **For Vision.java**
 ```
-$ curl https://projects.xtrp.io/source/vision/Vision.java -o Vision.java & javac Vision.java
+$ curl https://projects.xtrp.io/source/vision/Vision.java -o Vision.java
+$ javac Vision.java
 $ java Vision path/to/input_image.png path/to/output_image.png
 ```
 
