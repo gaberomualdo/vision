@@ -9,6 +9,7 @@ Vision is a simple algorithm that generates and outputs a new, different style o
 An example output is shown above.
 
 ## Code
+
 Vision is written in both Python (3) and Java. Both programs should be run from the command line, in the following formats, respectively:
 
 **For vision.py**
@@ -19,13 +20,13 @@ $ python3 vision.py path/to/input_image.png path/to/output_image.png
 
 **For Vision.java**
 ```
-$ curl https://projects.xtrp.io/source/vision/Vision.java & javac Vision.java
+$ curl https://projects.xtrp.io/source/vision/Vision.java -o Vision.java & javac Vision.java
 $ java Vision path/to/input_image.png path/to/output_image.png
 ```
 
 ```path/to/input_image.png``` and ```path/to/output_image.png``` should be replaced with the relative path to the input image and output image paths respectively.
 
-Note that the input and output images can be of any mainstream image filetype (png, jpeg, etc.), and that before running either the Java or Python versions, Java/Python3 must be installed on your machine.
+Note that the input and output images can be of any mainstream image filetype (png, jpeg, etc.), and that before running either the Java or Python versions, Java/Python3 must be installed on your machine. For the Python3 version, make sure Pillow is installed (run ```pip install pillow```).
 
 ## Web Implementation
 
